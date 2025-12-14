@@ -1,0 +1,8 @@
+/* 引入 Inter 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* 應用基礎樣式 */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fc; /* 非常淺的藍色背景 */
+}

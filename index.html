@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWS | Twenty Four Seven With Us Fan site</title>
+    <!-- 載入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 連結外部 CSS 樣式 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 連結外部 JavaScript 腳本 (包含 Tailwind Config 與功能) -->
+    <script src="script.js"></script>
+</head>
+<body class="text-gray-800 min-h-screen flex flex-col">
+
+    <!-- 頂部導航欄 (Header) -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- 品牌 Logo/名稱 -->
+            <h1 class="text-3xl font-extrabold text-tws-dark tracking-wider">
+                TWS <span class="text-tws-blue">Fan Site</span>
+            </h1>
+
+            <!-- 導航連結 -->
+            <nav class="flex space-x-2 md:space-x-4">
+                <a href="#" onclick="showSection('intro')" class="nav-link py-2 px-3 rounded-full font-semibold transition duration-300 hover:bg-tws-light text-sm md:text-base">團體介紹</a>
+                <a href="#" onclick="showSection('members')" class="nav-link py-2 px-3 rounded-full font-semibold transition duration-300 hover:bg-tws-light text-sm md:text-base">成員檔案</a>
+                <a href="#" onclick="showSection('music')" class="nav-link py-2 px-3 rounded-full font-semibold transition duration-300 hover:bg-tws-light text-sm md:text-base">作品與音樂</a>
+                <a href="#" onclick="showSection('performance')" class="nav-link py-2 px-3 rounded-full font-semibold transition duration-300 hover:bg-tws-light text-sm md:text-base">影音媒體</a>
+                
+        </div>
+    </header>
+
+    <!-- 主要內容區塊 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
+
+        <!-- 1. 團體介紹 (Intro Section) -->
+        <section id="intro" class="hidden animate-in fade-in duration-500">
+            <div class="bg-tws-blue text-white p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+                <div class="md:w-3/5">
+                    <h2 class="text-tws-dark md:text-7xl font-black leading-tight mb-4">
+                        TWS (투어스)
+                    </h2>
+                    <p class="text-tws-bold text-lg md:text-xl leading-relaxed">
+                        TWS 是 Pledis Entertainment 旗下的六人男子團體，團名取自「Twenty Four Seven With Us」，象徵著團體會像時光一樣，每天 24 小時、每週 7 天，永遠和粉絲在一起。他們以清涼、活力的風格，帶來最美好的青春故事。
+                    </p>
+                </div>
+                <!-- 圖像 Placeholder -->
+                <div class="md:w-2/5 flex justify-center">
+                    <img src="assets/img/TWS LOGO.jpeg" alt="TWS 團體概念圖" class="w-full max-w-xs rounded-full border-4 border-tws-yellow shadow-2xl transition duration-500 hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 成員檔案 (Members Section) -->
+        <section id="members" class="hidden">
+            <h2 class="text-4xl font-bold text-center mb-10 text-tws-dark">TWS 六位清涼少年</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 成員卡片 1 - SHINYU -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-tws-blue cursor-pointer"
+                     onclick="showSection('member-shinyu-detail')">
+                    <img src="assets/img/申惟.png" alt="成員 SHINYU" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover border-4 border-tws-yellow">
+                    <h3 class="text-2xl font-bold text-center text-tws-dark">SHINYU (申惟)</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">신유</p>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+
+
+                    </ul>
+                </div>
+                <!-- 成員卡片 2 - DOHOON -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-tws-blue cursor-pointer"
+                     onclick="showSection('member-dohoon-detail')">
+                    <img src="assets/img/道勳.png" alt="成員 DOHOON" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover border-4 border-tws-yellow">
+                    <h3 class="text-2xl font-bold text-center text-tws-dark">DOHOON (道勳)</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">도훈</p>
+
+                </div>
+                <!-- 成員卡片 3 - YOUNGJAE -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-tws-blue cursor-pointer"
+                     onclick="showSection('member-youngjae-detail')">
+                    <img src="assets/img/英宰.png" alt="成員 YOUNGJAE" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover border-4 border-tws-yellow">
+                    <h3 class="text-2xl font-bold text-center text-tws-dark">YOUNGJAE (英宰)</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">영재</p>
+
+                </div>
+                <!-- 成員卡片 4 - HANJIN -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-tws-blue cursor-pointer"
+                     onclick="showSection('member-hanjin-detail')">
+                    <img src="assets/img/韓振.png" alt="成員 HANJIN" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover border-4 border-tws-yellow">
+                    <h3 class="text-2xl font-bold text-center text-tws-dark">HANJIN (韓振)</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">한진</p>
+
+                </div>
+                <!-- 成員卡片 5 - JIHOON -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-tws-blue cursor-pointer"
+                     onclick="showSection('member-jihoon-detail')">
+                    <img src="assets/img/志薫.png" alt="成員 JIHOON" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover border-4 border-tws-yellow">
+                    <h3 class="text-2xl font-bold text-center text-tws-dark">JIHOON (志薫)</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">지훈</p>
+                    
+                </div>
+                <!-- 成員卡片 6 - KYUNGMIN -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-b-4 border-tws-blue cursor-pointer"
+                     onclick="showSection('member-kyungmin-detail')">
+                    <img src="assets/img/炅潣.png" alt="成員 KYUNGMIN" class="mx-auto rounded-full mb-4 w-32 h-32 object-cover border-4 border-tws-yellow">
+                    <h3 class="text-2xl font-bold text-center text-tws-dark">KYUNGMIN (炅潣)</h3>
+                    <p class="text-center text-sm text-gray-500 mb-4">경민</p>
+                    
+                </div>
+            </div>
+        </section>
+
+    <section id="music" class="hidden relative p-4 md:p-8">
+    <h2 class="text-4xl font-bold text-center mb-10 text-tws-dark">作品與音樂：TWS專輯</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
+        
+        <div class="bg-white p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-[1.03] flex flex-col items-center text-center">
+            <img src="assets/img/SparklingBlue.png" alt="第一張專輯封面" class="w-full h-auto rounded-xl object-cover mb-4 shadow-md aspect-square">
+            
+            <h3 class="text-2xl font-extrabold text-tws-blue mb-1">
+                <span class="text-tws-yellow">#1</span> Sparkling Blue
+            </h3>
+           
+            
+        </div>
+        
+        <div class="bg-white p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-[1.03] flex flex-col items-center text-center">
+            <img src="assets/img/TWS_-_Summer_Beat!.jpg" alt="先行曲封面" class="w-full h-auto rounded-xl object-cover mb-4 shadow-md aspect-square">
+            
+            <h3 class="text-2xl font-extrabold text-tws-blue mb-1">
+                <span class="text-tws-yellow">#2</span> Summer Beat!
+            </h3>
+
+            
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-[1.03] flex flex-col items-center text-center">
+            <img src="assets/img/Last Bell.png" alt="收錄曲封面" class="w-full h-auto rounded-xl object-cover mb-4 shadow-md aspect-square">
+            <h3 class="text-2xl font-extrabold text-tws-blue mb-1">
+                <span class="text-tws-yellow">#3</span>Last Bell
+            </h3>
+            
+           
+        </div>
+
+
+        <div class="bg-white p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-[1.03] flex flex-col items-center text-center">
+            <img src="assets/img/TWS_-_TRY_WITH_US.png" alt="收錄曲封面" class="w-full h-auto rounded-xl object-cover mb-4 shadow-md aspect-square">
+            <h3 class="text-2xl font-extrabold text-tws-blue mb-1">
+                <span class="text-tws-yellow">#4</span>Try With Us
+            </h3>
+            
+           
+        </div>
+        
+        <div class="bg-white p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-[1.03] flex flex-col items-center text-center">
+            <img src="assets/img/Hajimemashite.png.jfif" alt="收錄曲封面" class="w-full h-auto rounded-xl object-cover mb-4 shadow-md aspect-square">
+            <h3 class="text-2xl font-extrabold text-tws-blue mb-1">
+                <span class="text-tws-yellow">#5</span>はじめまして
+            </h3>
+            
+           
+        </div>
+        
+        <div class="bg-white p-6 rounded-2xl shadow-lg transition duration-300 hover:scale-[1.03] flex flex-col items-center text-center">
+            <img src="assets/img/Play Hard.jpeg" alt="收錄曲封面" class="w-full h-auto rounded-xl object-cover mb-4 shadow-md aspect-square">
+            <h3 class="text-2xl font-extrabold text-tws-blue mb-1">
+                <span class="text-tws-yellow">#6</span>Play Hard
+            </h3>
+            
+            
+        </div>
+
+        
+        </div>  
+        </section> 
+               
+                    <button onclick="showSection('album-detail')"
+    id="view-all-songs-btn" 
+    class="fixed bottom-4 right-4 text-sm bg-blue-100 text-tws-blue px-3 py-1 rounded-full shadow-md hover:bg-blue-200 transition z-50">
+    查看全部歌曲 →
+</button>
+
+        
+        <section id="album-detail" class="hidden container mx-auto p-4 transition-opacity duration-500">
+            
+            <div class="w-full px-0 py-4">
+                <button onclick="showSection('music')" 
+                        class="flex items-center text-tws-dark text-lg font-semibold hover:text-tws-blue transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                    回到作品與音樂
+                </button>
+            </div>
+            
+            <div class="max-w-3xl mx-auto mt-4 p-6 bg-white rounded-2xl shadow-lg border-t-8 border-tws-yellow">
+                <h2 class="text-4xl font-extrabold text-tws-dark mb-4">Sparkling Blue 專輯全曲目</h2>
+                <p class="text-gray-600 mb-6">
+                    以下是 TWS 首張迷你專輯中收錄的全部歌曲：
+                </p>
+
+                <ul class="space-y-4 text-lg">
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">1. Plot Twist (主打曲)</span>
+                        <a href="https://youtu.be/hVAc1Vf2ITU?si=zbFZBXZgsEYNm17G" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">2. Oh Mymy : 7s</span>
+                        <a href="https://youtu.be/YPg1sA0qNpo?si=IYzrgOJJvH7iqYo-" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">3. Unplugged Boy</span>
+                        <a href="https://youtu.be/bc_f6mawoYw?si=3qrjU6Dr04v23VCn" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">4.BFF</span>
+                        <a href="https://youtu.be/ZtYJMjx3dGw?si=6VTuiBLevBiGvu6u" class="text-sm text-tws-blue hover:underline">點此前往</a>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">5.First Hooky</span>
+                        <a href="https://youtu.be/guIJbqTyGDA?si=3zEGNeAoWhIME1F4" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="max-w-3xl mx-auto mt-4 p-6 bg-white rounded-2xl shadow-lg border-t-8 border-tws-yellow">
+                <h2 class="text-4xl font-extrabold text-tws-dark mb-4">Summer Beat! 專輯全曲目</h2>
+                <p class="text-gray-600 mb-6">
+                    以下是 TWS 迷二收錄的全部歌曲：
+                </p>
+
+                <ul class="space-y-4 text-lg">
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">1. If I'm S can you be my N (主打歌)</span>
+                        <a href="https://youtu.be/NRgZuuwD2WY?si=diN_YtAwY2fXQERX" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">2. Hey! Hey!</span>
+                        <a href="https://youtu.be/EawadPfQmf4?si=-F4nbVPx5SvpDZPS" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">3.You+Me=7942</span>
+                        <a href="https://youtu.be/n0Ekqdo0CZA?si=Hx05W9HphCoylLnX" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">4.Double Take</span>
+                        <a href="https://youtu.be/a5guoduVEBA?si=oe5Nf3TGzViWijl-" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">5.Keep On</span>
+                        <a href="https://youtu.be/IILU2TXNuV4?si=J8KNSYiOld7D9UPg" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">6.Fire Confetti</span>
+                        <a href="https://youtu.be/4kPuYzVeulY?si=4KCmNV-XLeCZNIov" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                </ul>
+            </div>
+
+             <div class="max-w-3xl mx-auto mt-4 p-6 bg-white rounded-2xl shadow-lg border-t-8 border-tws-yellow">
+                <h2 class="text-4xl font-extrabold text-tws-dark mb-4">Last Bell 專輯全曲目</h2>
+                <p class="text-gray-600 mb-6">
+                    以下是 TWS 單曲一輯收錄的全部歌曲：
+                </p>
+
+                <ul class="space-y-4 text-lg">
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">1.Last Festival(主打曲)</span>
+                        <a href="https://youtu.be/-XHCYeCGlgw?si=d4e58XDOKihU7RO4" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">2. Hightlight</span>
+                        <a href="https://youtu.be/RvBrWryLnEE?si=HEMWDQnt1EDHgVRi" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">3.Comma</span>
+                        <a href="https://youtu.be/lZZ-q7MVyv8?si=VM54-csbRxqU4Nul" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="max-w-3xl mx-auto mt-4 p-6 bg-white rounded-2xl shadow-lg border-t-8 border-tws-yellow">
+                <h2 class="text-4xl font-extrabold text-tws-dark mb-4">Try With Us 專輯全曲目</h2>
+                <p class="text-gray-600 mb-6">
+                    以下是 TWS 迷三收錄的全部歌曲：
+                </p>
+
+                <ul class="space-y-4 text-lg">
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">1.Countdown (主打曲)</span>
+                        <a href="https://youtu.be/Csaj3X6PKxY?si=PcyW_UwaBJ5CD3bq" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">2.Lucky to be loved</span>
+                        <a href="https://youtu.be/uOGaKdb60WE?si=xL1LJ0l5_Xivb385" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">3.Random Play</span>
+                        <a href="https://youtu.be/zysBgF01Yms?si=L6dRn-_GM9EmqOF3" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">4.Freestyle</span>
+                        <a href="https://youtu.be/V_vlZJ6Ymv8?si=w1HWTWKsdUFk5cTd" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">5.Now Playing</span>
+                        <a href="https://youtu.be/Ytnsx8qxDiM?si=tS5bQW9zWZGahmBo" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">6.GO BACK</span>
+                        <a href="https://youtu.be/fvgGeOQCin0?si=GqhkZqdQnNRUjYjH" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="max-w-3xl mx-auto mt-4 p-6 bg-white rounded-2xl shadow-lg border-t-8 border-tws-yellow">
+                <h2 class="text-4xl font-extrabold text-tws-dark mb-4">はじめまして 專輯全曲目</h2>
+                <p class="text-gray-600 mb-6">
+                    以下是 TWS 日專收錄的全部歌曲：
+                </p>
+
+                <ul class="space-y-4 text-lg">
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">1. はじめまして(主打曲)</span>
+                        <a href="https://youtu.be/l_XsIzsGK4M?si=_edNQwHwJloOSqda" class="text-sm text-tws-blue hover:underline">點此前往
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">2.BLOOM（feat. Ayumu Imazu）</span>
+                        <a href="https://youtu.be/Bc-hWqZxZ6I?si=0HvJHgm8SyZiqG2R" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">3.plot twist -Japanese ver.-</span>
+                        <a href="https://youtu.be/WU6EK5WH7P8?si=4hTMFCBJ6_A45OD6" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="max-w-3xl mx-auto mt-4 p-6 bg-white rounded-2xl shadow-lg border-t-8 border-tws-yellow">
+                <h2 class="text-4xl font-extrabold text-tws-dark mb-4">Play Hard 專輯全曲目</h2>
+                <p class="text-gray-600 mb-6">
+                    以下是 TWS 迷四收錄的全部歌曲：
+                </p>
+
+                <ul class="space-y-4 text-lg">
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">1. Overdirve(主打曲)</span>
+                        <a href="https://youtu.be/TzbGBkEh9ms?si=hFu1Rm26VVR8VoH6" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">2.Head Shoulders Knees Toes</span>
+                        <a href="https://youtu.be/4eAF2boGKaA?si=nBRONjUG-RKhNUj5" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">3.Hot Blue Shoes</span>
+                        <a href="https://youtu.be/ixxvaIwteUs?si=WItSYvCaq6vWbRMO" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">4.Caffeine Rush</span>
+                        <a href="https://youtu.be/9HT9oeHE6qc?si=BkDz_8BUkCI-zhgu" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">5.overthinking</span>
+                        <a href="https://youtu.be/3VCOhh5_CUE?si=8ayLMPQ7yEznmrOd" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">6.Here for you </span>
+                        <a href="https://youtu.be/sjNGlcLYpQM?si=ozOIdQyWmVGA7kUE" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+
+                </ul>
+            </div>
+
+           
+
+            
+
+            <div class="max-w-3xl mx-auto mt-4 p-6 bg-white rounded-2xl shadow-lg border-t-8 border-tws-yellow">
+                <h2 class="text-4xl font-extrabold text-tws-dark mb-4">OST全曲目</h2>
+                <p class="text-gray-600 mb-6">
+                    以下是 TWS OST全部歌曲：
+                </p>
+
+                <ul class="space-y-4 text-lg">
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">1.Brand New Day</span>
+                        <a href="https://youtu.be/5GWDlq4EFZ4?si=7PIGAOsS4Jf2C3cW" class="text-sm text-tws-blue hover:underline">點此前往</a>
+                    </li>
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">2.N.O.S.A</span>
+                        <a href="https://youtu.be/WtC08L_GuQw?si=n7jslJwJpwOJiqOZ" class="text-sm text-tws-blue hover:underline">點此前往</a>
+
+                    <li class="p-2 border-b border-tws-light flex justify-between items-center">
+                        <span class="font-bold text-tws-dark">3.KISS KISS SHY SHY (Korean.ver)</span>
+                        <a href="https://youtu.be/4RTcBgcVtOE?si=6Vp4zGah1XemfytA" class="text-sm text-tws-blue hover:underline">點此前往</a>
+
+                </ul>
+            </div>
+        </section>
+
+
+
+        <!-- 4. 舞台與媒體 (Performance Section) -->
+        <section id="performance" class="hidden">
+            <h2 class="text-4xl font-bold text-center mb-10 text-tws-dark">舞台與媒體：熱血青春的現場魅力</h2>
+            
+            <div class="space-y-12">
+                <!-- A. 歌曲舞台 (Music Show Stages) -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">🎉 打歌舞台</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- 舞台影片卡片 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="assets/img/TWS DEBUT SHOW  Mnet.png" alt="歌曲舞台影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">Plot Twist | TWS DEBUT SHOW | Mnet</p>
+                                <a href="https://youtu.be/9f6AdfijSTg?si=2Ra3E4qdp-8ScZbW" class="text-sm text-tws-yellow hover:underline block mt-1">觀看完整舞台</a>
+                            </div>
+                        </div>
+                        <!-- 舞台影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="assets/img/If I’m S  Can You Be My N_TWS COMEBACK SHOW  Mnet.png" alt="歌曲舞台影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark"> If I’m S, Can You Be My N? | TWS COMEBACK SHOW | Mnet </p>
+                                <a href="https://youtu.be/HCaUTfs5hlQ?si=q8uvLBqao9DSYFWH" class="text-sm text-tws-yellow hover:underline block mt-1">觀看完整舞台</a>
+                            </div>
+                        </div>
+                        
+                         <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="assets/img/overdrive mnet.png" alt="歌曲舞台影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark"> OVERDRIVE  | Mnet </p>
+                                <a href="https://youtu.be/oQJ-7vyrfTs?si=PfPXysXHdx8nWr_7" class="text-sm text-tws-yellow hover:underline block mt-1">觀看完整舞台</a>
+                            </div>
+                        </div>
+
+                        <!-- 為了保持網格對齊，隱藏第三格 -->
+                        <div class="hidden lg:block"></div> 
+                    </div>
+                    <!-- NEW Text Link at bottom right (純文字) -->
+                    <div class="text-right mt-6">
+                        <a href="#" onclick="showSection('all-stages')" class="text-lg text-tws-blue hover:text-tws-dark font-bold underline transition duration-300 inline-flex items-center">
+                            觀看更多舞台
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                
+
+                <!-- C. 成員直拍 (Fancams) -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">📸 成員直拍</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- 直拍卡片 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/7IG40w3Y-I0/maxresdefault.jpg" alt="JIHOON直拍縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">JIHOON | Countdown Fancam | MusicBank</p>
+                                <a href="https://youtu.be/7IG40w3Y-I0?si=5l_s9IFopx5IiaXP" class="text-sm text-tws-yellow hover:underline block mt-1">觀看直拍</a>
+                            </div>
+                        </div>
+                        <!-- 直拍卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/eTqTcOUj7IE/maxresdefault.jpg" alt="JIHOON直拍縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">YOUNGJAE |안녕이란 말 대신 (원곡:비) | 2024歌謠大祭典 | MBC</p>
+                                <a href="https://youtu.be/eTqTcOUj7IE?si=YRBWql88UgK6oBIQ" class="text-sm text-tws-yellow hover:underline block mt-1">觀看直拍</a>
+                            </div>
+                        </div>
+
+                         <!-- 直拍卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/wMncxlIUVyY/maxresdefault.jpg" alt="JIHOON直拍縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">DOHOON | Last Festival | 쇼! 음악중심 | MBC</p>
+                                <a href="https://youtu.be/wMncxlIUVyY?si=nEK0Goo_sComwFOC" class="text-sm text-tws-yellow hover:underline block mt-1">觀看直拍</a>
+                            </div>
+                        </div>
+
+                        <!-- 為了保持網格對齊，隱藏第三格 -->
+                        <div class="hidden lg:block"></div>
+                    </div>
+                    <!-- NEW Text Link at bottom right (純文字) -->
+                    <div class="text-right mt-6">
+                        <a href="#" onclick="showSection('all-fancams')" class="text-lg text-tws-blue hover:text-tws-dark font-bold underline transition duration-300 inline-flex items-center">
+                            觀看更多成員直拍
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- B. 練習室與翻唱 (Covers & Practice) -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">🎤 翻唱 </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                         <!-- Cover 影片卡片 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="assets/img/左右盲.png" alt="翻唱影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">YOUNGJAE  Cover  左右盲</p>
+                                <a href="https://youtu.be/0e1vbMytbnw?si=e0vsLF6URhx-7cNp" class="text-sm text-tws-yellow hover:underline block mt-1">觀看翻唱影片</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/kfbJylW4wME/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">KYUNGMIN cover Loving you Girl</p>
+                                <a href="https://youtu.be/kfbJylW4wME?si=3EG0DdC3Mp4bKiTh" class="text-sm text-tws-yellow hover:underline block mt-1">觀看翻唱影片</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/fT3opSWeRpM/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">SINYU cover Aqua Man</p>
+                                <a href="https://youtu.be/fT3opSWeRpM?si=sy8M5CZt3Pq4BbKq" class="text-sm text-tws-yellow hover:underline block mt-1">觀看翻唱影片</a>
+                            </div>
+                        </div>
+                        <!-- 為了保持網格對齊，隱藏第三格 -->
+                        <div class="hidden lg:block"></div>
+                    </div>
+                    <!-- NEW Text Link at bottom right (純文字) -->
+                    <div class="text-right mt-6">
+                        <a href="#" onclick="showSection('all-covers')" class="text-lg text-tws-blue hover:text-tws-dark font-bold underline transition duration-300 inline-flex items-center">
+                            觀看更多翻唱
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- B. 練習室與翻唱 (Covers & Practice) -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">🎤 錄音室 </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                         <!-- Cover 影片卡片 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/VYiNfBw0tKE/maxresdefault.jpg" alt="翻唱影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">'Oh Mymy : 7s' Recording Behind</p>
+                                <a href="https://youtu.be/VYiNfBw0tKE?si=0ClTowq7xFDRPlGK" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/zCuEaLGvSBI/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">‘첫 만남은 계획대로 되지 않아’ Recording Behind</p>
+                                <a href="https://youtu.be/zCuEaLGvSBI?si=vgN-VWhUDR7vY9_a" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/3HeCK47fa9Y/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">‘BFF’ Recording Behind</p>
+                                <a href="https://youtu.be/3HeCK47fa9Y?si=JWttz3rP5501U-LR" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+                            </div>
+                        </div>
+                        <!-- 為了保持網格對齊，隱藏第三格 -->
+                        <div class="hidden lg:block"></div>
+                    </div>
+                    <!-- NEW Text Link at bottom right (純文字) -->
+                    <div class="text-right mt-6">
+                        <a href="#" onclick="showSection('all-recording')" class="text-lg text-tws-blue hover:text-tws-dark font-bold underline transition duration-300 inline-flex items-center">
+                            觀看更多錄音室
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                                <!-- B. 練習室與翻唱 (Covers & Practice) -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">🎤 練習室 </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                         <!-- Cover 影片卡片 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/hPs5roxthqg/maxresdefault.jpg" alt="翻唱影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">‘OVERDRIVE’ Dance Practice (Fix ver.)</p>
+                                <a href="https://youtu.be/hPs5roxthqg?si=B_zQt-X0CqJnk0Ez" class="text-sm text-tws-yellow hover:underline block mt-1">觀看練習室</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/HnPSMBLsQ8A/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">'내가 S면 넌 나의 N이 되어줘' Dance Practice (Fix ver.)</p>
+                                <a href="https://youtu.be/HnPSMBLsQ8A?si=HaRnBGYV7b8Iwy-S" class="text-sm text-tws-yellow hover:underline block mt-1">觀看練習室</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/BWbh3LGiSUo/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark"> 'hey! hey!’ Dance Practice (Fix ver.)</p>
+                                <a href="https://youtu.be/BWbh3LGiSUo?si=eHG0SM90-UodZl7n" class="text-sm text-tws-yellow hover:underline block mt-1">觀看練習室</a>
+                            </div>
+                        </div>
+                        <!-- 為了保持網格對齊，隱藏第三格 -->
+                        <div class="hidden lg:block"></div>
+                    </div>
+                    <!-- NEW Text Link at bottom right (純文字) -->
+                    <div class="text-right mt-6">
+                        <a href="#" onclick="showSection('all-dance')" class="text-lg text-tws-blue hover:text-tws-dark font-bold underline transition duration-300 inline-flex items-center">
+                            觀看更多練習室
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">🎤 幕後花絮 </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                         <!-- Cover 影片卡片 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/XxEPO216Ch4/maxresdefault.jpg" alt="翻唱影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark"> 'Last Bell' Jacket Shoot Sketch</p>
+                                <a href="https://youtu.be/XxEPO216Ch4?si=ONPvE6myHNk2o7a6" class="text-sm text-tws-yellow hover:underline block mt-1">觀看花絮</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/j71hjbgW_d0/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">2024 더팩트 뮤직 어워즈 비하인드</p>
+                                <a href="https://youtu.be/j71hjbgW_d0?si=b8HMQDND9y4OKyU4" class="text-sm text-tws-yellow hover:underline block mt-1">觀看花絮</a>
+                            </div>
+                        </div>
+
+                        <!-- Cover 影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/zF20fSdiLjY/maxresdefault.jpg" alt="舞蹈練習影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">‘2025 TWS 1ST FANMEETING 〈42:CLUB〉 IN SEOUL’ 비하인드</p>
+                                <a href="https://youtu.be/zF20fSdiLjY?si=gQdJxm0gRz2hX3IX" class="text-sm text-tws-yellow hover:underline block mt-1">觀看花絮</a>
+                            </div>
+                        </div>
+                        <!-- 為了保持網格對齊，隱藏第三格 -->
+                        <div class="hidden lg:block"></div>
+                    </div>
+                    <!-- NEW Text Link at bottom right (純文字) -->
+                    <div class="text-right mt-6">
+                        <a href="#" onclick="showSection('all-behind')" class="text-lg text-tws-blue hover:text-tws-dark font-bold underline transition duration-300 inline-flex items-center">
+                            觀看更多幕後花絮
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="space-y-12">
+                <!-- D. 歌曲舞台 (Music Show Stages) -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">🎉自製綜藝 </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- 舞台影片卡片 1 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/BCWJDqb1zkE/maxresdefault.jpg" alt="歌曲舞台影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">心照不宣的關係EP1</p>
+                                <a href="https://youtu.be/BCWJDqb1zkE?si=WrfoLCaok0wIdgPK" class="text-sm text-tws-yellow hover:underline block mt-1">點此前往</a>
+                            </div>
+                        </div>
+                        <!-- 舞台影片卡片 2 -->
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/N5Ao2vEQmNA/maxresdefault.jpg" alt="歌曲舞台影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">申惟的同喜同喜</p>
+                                <a href="https://youtu.be/N5Ao2vEQmNA?si=qul8l-FKga_USavN" class="text-sm text-tws-yellow hover:underline block mt-1">點此前往</a>
+                            </div>
+                        </div>
+
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                            <img src="https://i1.ytimg.com/vi/kt-ZS3CuZBQ/maxresdefault.jpg" alt="歌曲舞台影片縮圖" class="w-full h-auto object-cover">
+                            <div class="p-4">
+                                <p class="font-semibold text-tws-dark">TWS的宿舍生活EP1</p>
+                                <a href="https://youtu.be/kt-ZS3CuZBQ?si=Bl_TEBsojdn1eZSi" class="text-sm text-tws-yellow hover:underline block mt-1">點此前往</a>
+                            </div>
+                        </div>
+
+                        <!-- 為了保持網格對齊，隱藏第三格 -->
+                        <div class="hidden lg:block"></div> 
+                    </div>
+                    <!-- NEW Text Link at bottom right (純文字) -->
+                    <div class="text-right mt-6">
+                        <a href="#" onclick="showSection('all-TV')" class="text-lg text-tws-blue hover:text-tws-dark font-bold underline transition duration-300 inline-flex items-center">
+                            觀看更多綜藝
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline ml-1"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="all-stages" class="hidden">
+    <button onclick="showSection('performance')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+        返回選擇
+    </button>
+    
+    <div class="bg-white p-6 rounded-2xl shadow-xl">
+        
+        <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">TWS 舞台表演精選</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                <img src="https://i1.ytimg.com/vi/9e2M7jKtChk/maxresdefault.jpg" alt="舞台影片縮圖 3" class="w-full h-auto object-cover">
+                <div class="p-4">
+                    <p class="font-semibold text-tws-dark text-sm">Countdown! | Show! MusicCore | MBC</p>
+                    <a href="https://youtu.be/9e2M7jKtChk?si=qAX_5muZHv0RIBgm" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                <img src="https://i1.ytimg.com/vi/N5zKZCRqpN0/maxresdefault.jpg" alt="舞台影片縮圖 4" class="w-full h-auto object-cover">
+                <div class="p-4">
+                    <p class="font-semibold text-tws-dark text-sm">Lucky to be loved | SBS</p>
+                    <a href="https://youtu.be/N5zKZCRqpN0?si=fMCeJ8TEL9a4WWQD" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                <img src="https://i1.ytimg.com/vi/WeIosG0lygo/maxresdefault.jpg" alt="舞台影片縮圖 5" class="w-full h-auto object-cover">
+                <div class="p-4">
+                    <p class="font-semibold text-tws-dark text-sm">Last Festival | Show! MusicCore | MBC</p>
+                    <a href="https://youtu.be/WeIosG0lygo?si=HGHYCs7HKGW9xNIR" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300">
+                <img src="https://i1.ytimg.com/vi/9k3Tq7f2pKg/maxresdefault.jpg" alt="舞台影片縮圖 6" class="w-full h-auto object-cover">
+                <div class="p-4">
+                    <p class="font-semibold text-tws-dark text-sm">Head Shoulders Knees Toes l Show Champion</p>
+                    <a href="https://youtu.be/9k3Tq7f2pKg?si=rErpHZN9vBWXfzxn" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            </div>
+        
+        <p class="text-center text-lg text-gray-500 mt-10">
+            還有更多帥氣舞台，敬請期待！
+        </p>
+        
+    </div>
+    </section>
+
+
+
+<section id="all-covers" class="hidden">
+    <button onclick="showSection('performance')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+        返回選擇
+    </button>
+    
+    <div class="bg-white p-6 rounded-2xl shadow-xl">
+        
+        <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">所有 TWS 翻唱</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/6iQWTvqe3ZA/maxresdefault.jpg" alt="影片縮圖 3" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">DOHOON | Yes or No</p>
+                    <a href="https://youtu.be/6iQWTvqe3ZA?si=eX2DacIRLcmv_Q1I" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/YPmpeQg0SFo/maxresdefault.jpg" alt="影片縮圖 4" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">JIHOON | Face to Face EP.1</p>
+                    <a href="https://youtu.be/YPmpeQg0SFo?si=aGRjRZ-YjdQN9g69" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/zB5BykHn5wY/maxresdefault.jpg" alt="影片縮圖 5" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">YOUNGJAE | A Thousand Year</p>
+                    <a href="https://youtu.be/zB5BykHn5wY?si=e6zNn7eb73TCN7OL" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/zvN5L_m9oxA/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">KYUNGMIN | 24/7,365</p>
+                    <a href="https://youtu.be/zvN5L_m9oxA?si=_v_NzZmxa1R4Bp6J" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/Bx5xZsH4VtM/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">KYUNGMIN | 好きだから</p>
+                    <a href="https://youtu.be/Bx5xZsH4VtM?si=WUvl3WTT39Z_x3JS" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            </div>
+        
+        <p class="text-center text-lg text-gray-500 mt-10">
+            更多翻唱，敬請期待！
+        </p>
+        
+    </div>
+    </section>
+
+
+
+<section id="all-fancams" class="hidden">
+    <button onclick="showSection('performance')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+        返回選擇
+    </button>
+    
+    <div class="bg-white p-6 rounded-2xl shadow-xl">
+        
+        <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">所有 TWS 成員直拍精選</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/V5H2F0FZWgU/maxresdefault.jpg" alt="SHINYU 直拍縮圖" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">HANJIN | plot twist | SBS 人氣歌謠</p>
+                    <a href="https://youtu.be/V5H2F0FZWgU?si=-L5inDfuAm79QG-S" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/VxmqjkFGyE0/maxresdefault.jpg" alt="YOUNGJAE 直拍縮圖" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">SHINYU | plot Twist | Music Bank</p>
+                    <a href="https://youtu.be/VxmqjkFGyE0?si=5t6iPK6byIF76PRh" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/naVCZuxhg0g/maxresdefault.jpg" alt="YOUNGJAE 直拍縮圖" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">KYUNGMIN | If I'm S Can You Be My N | SBS 人氣歌謠</p>
+                    <a href="https://youtu.be/naVCZuxhg0g?si=24-Z8EkatNaSTzDW" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            </div>
+        
+        <p class="text-center text-lg text-gray-500 mt-10">
+            更多成員直拍，敬請期待！
+        </p>
+        
+    </div>
+    </section>
+
+
+
+<section id="all-recording" class="hidden">
+    <button onclick="showSection('performance')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+        返回選擇
+    </button>
+    
+<div class="bg-white p-6 rounded-2xl shadow-xl">
+    
+    <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">所有 TWS 錄音室</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/cQXVH0uy1gY/maxresdefault.jpg" alt="特輯影片縮圖 4" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">'hey! hey!' Recording Behind</p>
+                <a href="https://youtu.be/cQXVH0uy1gY?si=cQJ2BEpeRA2IzLOi" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+        
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/1S6WVtw7JOs/maxresdefault.jpg" alt="樂隊現場影片縮圖 5" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> '내가 S면 넌 나의 N이 되어줘' Recording Behind</p>
+                <a href="https://youtu.be/1S6WVtw7JOs?si=AW8cNzNqvNPEwARI" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+        
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/3j39trI6zgI/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 'Double Take' Recording Behind</p>
+                <a href="https://youtu.be/3j39trI6zgI?si=Kl6Ks8NDJkvf715m" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/nUVI5KzAMcM/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> '마지막 축제' Recording Behind</p>
+                <a href="https://youtu.be/nUVI5KzAMcM?si=4Jz1mo-2QwPeb-AV" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/TvWPbA2nGSs/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">  '마음 따라 뛰는 건 멋지지 않아?’ Recording Behind</p>
+                <a href="https://youtu.be/TvWPbA2nGSs?si=u9S1y_mY4-tKjLOs" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/_klBmpbZDto/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">   'Lucky to be loved' Recording Behind</p>
+                <a href="https://youtu.be/_klBmpbZDto?si=CvNDK41IcZ2WtmQp" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/MbtppgtGFb0/maxresdefault.jpg" alt="翻唱影片縮圖 3" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">Kiss Kiss Shy Shy (Korean.Ver)</p>
+                <a href="https://youtu.be/MbtppgtGFb0?si=9YwjU4Z0G1jaPoT2" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+        
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/7f4xPa1Wq6w/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">    ‘Head Shoulders Knees Toes’ Recording Behind</p>
+                <a href="https://youtu.be/7f4xPa1Wq6w?si=R_q8GEpmyYRqsTU9" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow-xl **mt-8**"> 
+    
+    <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">成員cover錄音室</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/lrMPSg_DGYQ/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">   'Aqua Man - Beenzino' l Covered by TWS SHINYU</p>
+                <a href="https://youtu.be/lrMPSg_DGYQ?si=1vcbP4mUe9_w3eYt" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/6LsF4NvQBnw/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">    '左右盲 (좌우맹) - YORUSHIKA' l Covered by TWS YOUNGJAE</p>
+                <a href="https://youtu.be/6LsF4NvQBnw?si=9D6Dst14sG7TH0qy" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/LLSdhxN37GI/maxresdefault.jpg" alt="翻唱影片縮圖 3" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">'Yes or No - 정국 (Jung Kook)' l Covered by TWS DOHOON</p>
+                <a href="https://youtu.be/LLSdhxN37GI?si=PRIVUJne9f5C4wPR" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+        
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/t3S0F5LdWRs/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">     'Face To Face - Ruel' l Covered by TWS JIHOON</p>
+                <a href="https://youtu.be/t3S0F5LdWRs?si=4DemjlGgrUzI1rMT" class="text-sm text-tws-yellow hover:underline block mt-1">觀看錄音室</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <p class="text-center text-lg text-gray-500 mt-10">
+            更多錄音室，敬請期待！
+        </p>
+    </section>
+
+
+
+<section id="all-behind" class="hidden">
+    <button onclick="showSection('performance')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+        返回選擇
+    </button>
+    
+    <div class="bg-white p-6 rounded-2xl shadow-xl">
+        
+        <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">所有 TWS 幕後花絮</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/XOuHSy290U0/maxresdefault.jpg" alt="特輯影片縮圖 4" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">어린이 TWS (투어스) 촬영 비하인드 🐶</p>
+                    <a href="https://youtu.be/XOuHSy290U0?si=io31mJpBgGjVBWxf" class="text-sm text-tws-yellow hover:underline block mt-1">觀看花絮</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/DnFR0HEhfSw/maxresdefault.jpg" alt="樂隊現場影片縮圖 5" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> ‘SUMMER BEAT!’ 일본 프로모션 비하인드 #1</p>
+                    <a href="https://youtu.be/DnFR0HEhfSw?si=cnXPd0GvRY8FJiWR" class="text-sm text-tws-yellow hover:underline block mt-1">觀看花絮</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/7pcpLUKqJJw/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">  'Lucky to be loved' Special Video Shoot Sketch</p>
+                    <a href="https://youtu.be/7pcpLUKqJJw?si=zf-nxiPEy37ISAOP" class="text-sm text-tws-yellow hover:underline block mt-1">觀看花絮</a>
+                </div>
+            </div>
+
+            
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/XXvflDJhCL4/maxresdefault.jpg" alt="翻唱影片縮圖 3" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> ‘TRY WITH US’ 활동 비하인드 #2</p>
+                    <a href="https://youtu.be/XXvflDJhCL4?si=dHtpIgy66howg_0y" class="text-sm text-tws-yellow hover:underline block mt-1">觀看花絮</a>
+                </div>
+            </div>
+            </div>
+        
+        <p class="text-center text-lg text-gray-500 mt-10">
+            更多幕後花絮，敬請期待！
+        </p>
+        
+    </div>
+    </section>
+
+    <section id="all-dance" class="hidden">
+    <button onclick="showSection('performance')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+        返回選擇
+    </button>
+    
+    <div class="bg-white p-6 rounded-2xl shadow-xl">
+        
+        <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">所有 TWS 舞蹈練習室</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/DOFB3i9XTZk/maxresdefault.jpg" alt="翻唱影片縮圖 3" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> 'Rock with you' Dance Practice | 원곡 : SEVENTEEN (세븐틴)</p>
+                    <a href="https://youtu.be/DOFB3i9XTZk?si=Cw5yjrOvlF0xWOOF" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/AHnXzcU4L8w/maxresdefault.jpg" alt="特輯影片縮圖 4" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">‘Oh Mymy : 7s’ Dance Practice (Fix ver.)</p>
+                    <a href="https://youtu.be/AHnXzcU4L8w?si=lacJk_Uje8eINeMq" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/rbyhrcLD5fQ/maxresdefault.jpg" alt="樂隊現場影片縮圖 5" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> ‘첫 만남은 계획대로 되지 않아’ Dance Practice (Fix ver.)</p>
+                    <a href="https://youtu.be/rbyhrcLD5fQ?si=dWwyVzzuZs_I9qj5" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/Zkx3nKe4TP8/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">‘아낀다’ Dance Practice (KCON JAPAN 2024 ver.) | 원곡 : SEVENTEEN (세븐틴)</p>
+                    <a href="https://youtu.be/Zkx3nKe4TP8?si=24c30pAedK4f_P4H" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+           
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/l0j1niJPhmA/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> '3D' Dance Practice (KCON LA 2024 ver.) | 원곡 : 정국 (Jung Kook)</p>
+                    <a href="https://youtu.be/l0j1niJPhmA?si=2CddT9LKtcdp50RP" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/FzDz3CmOjN0/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">2024 MAMA AWARDS Dance Practice</p>
+                    <a href="https://youtu.be/FzDz3CmOjN0?si=az95lsBAzi591GA1" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/Rp-gkPm6Kf4/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> 'Dynamite' Dance Practice (2024 MAMA AWARDS ver.) | 원곡 : BTS (방탄소년단)</p>
+                    <a href="https://youtu.be/Rp-gkPm6Kf4?si=v4h1Cfd-0kJdloAY" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/Whzw29g8gU4/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> MMA 2024 Dance Practice</p>
+                    <a href="https://youtu.be/Whzw29g8gU4?si=62KY4y4jN4Ljs8L2" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/h9O3qOZBA40/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">2024 MUSIC BANK GLOBAL FESTIVAL in JAPAN Dance Practice</p>
+                    <a href="https://youtu.be/h9O3qOZBA40?si=lIhR5y54HTTqau4r" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/vEGrCK8Q-4s/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">‘마지막 축제’ Dance Practice (2024 MUSIC BANK GLOBAL FESTIVAL in JAPAN ver.) | 원곡 : 서태지와 아이들</p>
+                    <a href="https://youtu.be/vEGrCK8Q-4s?si=zxijqpxT39cK0w3W" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/tNWR_EEAumI/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> ‘마음 따라 뛰는 건 멋지지 않아?’ Dance Practice (Fix ver.)</p>
+                    <a href="https://youtu.be/a0x5BAre2Go?si=UqkqJ0gG6rR7HK3u" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/LFNYLFnes4A/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">‘はじめまして’ Dance Practice (Fix ver.)</p>
+                    <a href="https://youtu.be/LFNYLFnes4A?si=HrpUIXN3oz0pocTo" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/6QEvG0Hh5ng/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">‘청바지’ (원곡 : 부석순) Rehearsal Stage Cam @ 1ST FANMEETING 〈42:CLUB〉 IN SEOUL</p>
+                    <a href="https://youtu.be/6QEvG0Hh5ng?si=GGjaZhyTGU_lgMM3" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/1l4swvD3AsE/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> ‘Make A Wish’ (원곡 : NCT U) Rehearsal Stage Cam @ 1ST FANMEETING 〈42:CLUB〉 IN SEOUL</p>
+                    <a href="https://youtu.be/1l4swvD3AsE?si=d2PMQWfAq1U4XD3b" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/dtTeMSpoz8g/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm"> ‘뱅(Bang)!’ (원곡 : After School) Rehearsal Stage Cam @ 1ST FANMEETING 〈42:CLUB〉 IN SEOUL</p>
+                    <a href="https://youtu.be/dtTeMSpoz8g?si=LbPuQa523wptKKd1" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/1ksyYACJ97A/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">'Head Shoulders Knees Toes' Dance Practice</p>
+                    <a href="assets/img/head shoulders knees toes practice.jpg" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+
+
+                        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/1ksyYACJ97A/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">2025 MAMA AWARDS Dance Practice (Mad Ver.)</p>
+                    <a href="https://youtu.be/1ksyYACJ97A?si=1uPlPVx55DRVySUF" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+    
+    </div>
+                <p class="text-center text-lg text-gray-500 mt-10">
+            更多練習室，敬請期待！
+        </p>
+    </div>   
+    </section>
+
+
+
+<section id="all-TV" class="hidden">
+    <button onclick="showSection('performance')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+        返回選擇
+    </button>
+    
+    <div class="bg-white p-6 rounded-2xl shadow-xl">
+        
+        <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">TWS CLUB</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/vroBDd3fBqY/maxresdefault.jpg" alt="翻唱影片縮圖 3" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">娛樂之後來聚餐吧</p>
+                    <a href="https://youtu.be/vroBDd3fBqY?si=mmbPiyIu430jLLOj" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/hrw60xhTmAc/maxresdefault.jpg" alt="特輯影片縮圖 4" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">機智的健康檢查EP1</p>
+                    <a href="https://youtu.be/hrw60xhTmAc?si=ChQ0gM4pE89om9J6" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/tEEtX1AeTEY/maxresdefault.jpg" alt="樂隊現場影片縮圖 5" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">清涼的邀請EP1</p>
+                    <a href="https://youtu.be/tEEtX1AeTEY?si=O6CJ95Yf_gaprNEl" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+                <img src="https://i1.ytimg.com/vi/3rm2qmyJm68/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+                <div class="p-4 flex-1">
+                    <p class="font-semibold text-tws-dark text-sm">人間劇場EP1</p>
+                    <a href="https://youtu.be/3rm2qmyJm68?si=8MQtmPRAZT-T6wAd" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+                </div>
+            </div>
+            </div> 
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow-xl **mt-8**"> 
+    
+    <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">TWS TOUR</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/NNL7bnRu1qQ/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> TWS TOURS | EP.1</p>
+                <a href="https://youtu.be/NNL7bnRu1qQ?si=SmYBAZCAoaov_WfN" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/smRSjQIPiyc/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> TWS TOURS | EP.2</p>
+                <a href="https://youtu.be/smRSjQIPiyc?si=5oe3f3vr2EEjeuI-" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/hHVHYTgJwww/maxresdefault.jpg" alt="翻唱影片縮圖 3" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">TWS TOURS | EP.3</p>
+                <a href="https://youtu.be/hHVHYTgJwww?si=Ls2KRG9L_UdJcili" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+        
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/UvKW3sYNxds/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> TWS TOURS in JEJU | EP.1</p>
+                <a href="https://youtu.be/UvKW3sYNxds?si=s5Rd01YfKAqHm4UE" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/4n7hb8X2NP0/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">  TWS TOURS in JEJU | EP.2</p>
+                <a href="https://youtu.be/hHVHYTgJwww?si=qRVJmEvBZQXqmJCk" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/2UCyK6lyhsM/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> TWS TOURS in JEJU | EP.3</p>
+                <a href="https://youtu.be/2UCyK6lyhsM?si=T2ZgsccWdXRFSOzt" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/LkbRrm1q9P8/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> TWS TOURS in JEJU | EP.4</p>
+                <a href="https://youtu.be/LkbRrm1q9P8?si=ighSXPUcB4CxFnPB" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+</div>
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow-xl **mt-8**"> 
+    
+    <h2 class="text-3xl font-extrabold text-tws-blue mb-6 border-b pb-2">Random Play🕹️</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/s8Kn9sNZS7U/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 모닝 요정 뽑기 | 早安精靈選拔</p>
+                <a href="https://youtu.be/s8Kn9sNZS7U?si=Me6G2PC5pRkIe84S" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/n5v3_JujnjY/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 일본어 미션 뽑기 | 抽日語任務</p>
+                <a href="https://youtu.be/n5v3_JujnjY?si=GJQdgzYRrlYRVNt2" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/fSXR94fucCM/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 룸메이트 정하기 | 決定室友</p>
+                <a href="https://youtu.be/fSXR94fucCM?si=_a6iRE620-T_-X0p" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/jbcfOzRXmZU/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 힐링 족욕 결정전 | 治癒足浴決定戰</p>
+                <a href="https://youtu.be/jbcfOzRXmZU?si=xY2F5u-H30claRYq" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/5VHuTdyElbs/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">맛도리 감별사 먹방 ASMR | 美食鑑定師 吃播ASMR</p>
+                <a href="https://youtu.be/5VHuTdyElbs?si=6oofWRya05eTLjE-" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/jE76V4IgFi0/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm">  김밥 말다가 라이어 게임 #1 | 紫菜包飯遊戲和誰在說謊遊戲</p>
+                <a href="https://youtu.be/jE76V4IgFi0?si=k5vUGIgNgSaw-ufc" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/JCltWb0x2Gk/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 라이어 게임 #2 | 誰在說謊遊戲</p>
+                <a href="https://youtu.be/JCltWb0x2Gk?si=9OOKQicXQb_Rsf0i" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/ZX4Ygv_WpeA/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 도란도란 과자 파티 | 溫馨的零食派對</p>
+                <a href="https://youtu.be/ZX4Ygv_WpeA?si=N1UYJc-UCG8-oTIB" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/stAenF5lasw/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 무서운 게 조금! 좋아! | 有點喜歡!恐怖故事!</p>
+                <a href="https://youtu.be/stAenF5lasw?si=p7N5DBA7yvFy_QyD" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/gwcukGArroY/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 멍삐즈의 저녁 식사 | 汪鼬z的晚餐時間</p>
+                <a href="https://youtu.be/gwcukGArroY?si=IiqJbU5Ip0ovTsBw" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+
+        <div class="rounded-xl overflow-hidden shadow-lg border-2 border-tws-light hover:shadow-2xl transition duration-300 flex flex-col">
+            <img src="https://i1.ytimg.com/vi/RH9d8nRsx1o/maxresdefault.jpg" alt="HANJIN 翻唱影片縮圖 6" class="w-full h-auto object-cover flex-shrink-0">
+            <div class="p-4 flex-1">
+                <p class="font-semibold text-tws-dark text-sm"> 글자 조립 장인전 | 文字組裝大師賽</p>
+                <a href="https://youtu.be/RH9d8nRsx1o?si=OYudRrJpMbHgPaTO" class="text-sm text-tws-yellow hover:underline block mt-1">觀看影片</a>
+            </div>
+        </div>
+    </div>   
+
+        
+            <p class="text-center text-lg text-gray-500 mt-10">
+            更多綜藝，敬請期待！
+        </p>
+    </div>
+    
+
+    </section>
+
+        
+
+        <!-- 9. 成員 SHINYU 詳細檔案 (Detail Section) -->
+        <section id="member-shinyu-detail" class="hidden">
+            <button onclick="showSection('members')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                回到成員檔案
+            </button>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-tws-yellow flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-12">
+                <!-- 圖片輪播 & 基本資訊 -->
+                <div class="lg:w-1/3 flex flex-col items-center">
+                    <!-- Photo Carousel Container -->
+                    <div class="relative w-64 h-64 mb-6">
+                        <!-- Image (Initial State is managed by showSection calling changePhoto('shinyu', 0)) -->
+                        <img id="photo-shinyu" 
+                             src="https://placehold.co/300x300/facc15/1e3a8a?text=SHINYU+(1)" 
+                             alt="成員 SHINYU 形象照 1" 
+                             class="w-full h-full rounded-xl object-cover border-4 border-tws-blue shadow-lg transition duration-300">
+                        
+                        <!-- Previous Button -->
+                        <button onclick="changePhoto('shinyu', -1)" 
+                                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Left Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button onclick="changePhoto('shinyu', 1)" 
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Right Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                    
+                    <h3 class="text-4xl font-extrabold text-tws-dark mb-2">SHINYU (申惟)</h3>
+                    
+                    <div class="mt-4 text-left w-full max-w-xs space-y-2">
+                        <p class="text-gray-700"><span class="font-bold">生日:</span> 2003.11.7</p>
+                        <p class="text-gray-700"><span class="font-bold">星座:</span> 天蠍座</p>
+                        <p class="text-gray-700"><span class="font-bold">MBTI:</span> INFP</p>
+                    </div>
+                </div>
+
+                <!-- 詳細介紹 -->
+                <div class="lg:w-2/3">
+                    <h4 class="text-3xl font-bold text-tws-blue mb-4 border-b pb-2">希望成員們都健健康康</h4>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Sinyu本名為申晶㬊，藝名是申惟，以TWS以隊長身分出道，同時也是年紀排行第一的成員。
+                    </p>
+
+                    <h4 class="text-2xl font-bold text-tws-dark mb-3">關於他</h4>
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-gray-700">
+                        <li>數學很好，說自己不當愛豆的話會去當數學老師</li>
+                        <li>喜歡生魚片、睡覺</li>
+                        <li>會出道是因為二姐邀他去首爾的遊樂園，但他起初拒絕了，不過二姐硬拉著他去，沒想到在旅途中的路上被SM娛樂星探發掘，並就此開啟了演藝之路</li>
+                        <li>手機桌布是父母年輕時的合照，曾經為了減肥特地將桌布換成減肥兩個字</li>
+                        <li>說過如果能選擇的話會想要當TWS的忙內</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. 成員 DOHOON 詳細檔案 (Detail Section) -->
+        <section id="member-dohoon-detail" class="hidden">
+            <button onclick="showSection('members')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                回到成員檔案
+            </button>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-tws-yellow flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-12">
+                <!-- 圖片輪播 & 基本資訊 -->
+                <div class="lg:w-1/3 flex flex-col items-center">
+                    <!-- Photo Carousel Container -->
+                    <div class="relative w-64 h-64 mb-6">
+                        <!-- Image (Initial State is managed by showSection calling changePhoto('dohoon', 0)) -->
+                        <img id="photo-dohoon" 
+                             src="assets/img/AAA_道勳.png" 
+                             alt="成員 DOHOON 形象照 1" 
+                             class="w-full h-full rounded-xl object-cover border-4 border-tws-blue shadow-lg transition duration-300">
+                        
+                        <!-- Previous Button -->
+                        <button onclick="changePhoto('dohoon', -1)" 
+                                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Left Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button onclick="changePhoto('dohoon', 1)" 
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Right Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+
+                    <h3 class="text-4xl font-extrabold text-tws-dark mb-2">DOHOON (道勳)</h3>
+                    
+                    <div class="mt-4 text-left w-full max-w-xs space-y-2">
+                        <p class="text-gray-700"><span class="font-bold">生日:</span> 2005.1.30</p>
+                        <p class="text-gray-700"><span class="font-bold">星座:</span> 水瓶座 </p>
+                        <p class="text-gray-700"><span class="font-bold">MBTI:</span> ISTP</p>
+                    </div>
+                </div>
+
+                <!-- 詳細介紹 -->
+                <div class="lg:w-2/3">
+                    <h4 class="text-3xl font-bold text-tws-blue mb-4 border-b pb-2">累了的時候我會一直陪在你身邊的</h4>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                       Dohoon本名為金道勳，是TWS成員中第一個被公開的，年紀排行第二的成員。
+
+                    <h4 class="text-2xl font-bold text-tws-dark mb-3">關於他</h4>
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-gray-700">
+                        <li>曾和申惟同間高中，在申惟畢業後便轉去翰林藝高</li>
+                        <li>曾經想用伊卡洛斯做為自己的藝名，覺得申惟可以用藝名很帥氣，結果被公司駁回，</li>
+                        <li>國中時去參加母校的畢業典禮，收到星探的讚賞，但太過興奮直接跑回家也沒留電話跟拿名片，不過在同一天也被Pldis的星探遞名片，有好好地收下</li>
+                        <li>喜歡喝桃子冰美式，曾給自己的wvs名稱叫做桃子冰美lover</li>
+                        <li>喜歡收集金莎巧克力的貼紙，在平板、手機殼上都能看見，連在FM上送給42的都是已經撕掉貼紙的金沙</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. 成員 YOUNGJAE 詳細檔案 (Detail Section) -->
+        <section id="member-youngjae-detail" class="hidden">
+            <button onclick="showSection('members')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                回到成員檔案
+            </button>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-tws-yellow flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-12">
+                <!-- 圖片輪播 & 基本資訊 -->
+                <div class="lg:w-1/3 flex flex-col items-center">
+                    <!-- Photo Carousel Container -->
+                    <div class="relative w-64 h-64 mb-6">
+                        <!-- Image (Initial State is managed by showSection calling changePhoto('youngjae', 0)) -->
+                        <img id="photo-youngjae" 
+                             src="https://placehold.co/300x300/bfdbfe/1e3a8a?text=YOUNGJAE+(1)" 
+                             alt="成員 YOUNGJAE 形象照 1" 
+                             class="w-full h-full rounded-xl object-cover border-4 border-tws-blue shadow-lg transition duration-300">
+                        
+                        <!-- Previous Button -->
+                        <button onclick="changePhoto('youngjae', -1)" 
+                                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Left Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button onclick="changePhoto('youngjae', 1)" 
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Right Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+
+                    <h3 class="text-4xl font-extrabold text-tws-dark mb-2">YOUNGJAE (英宰)</h3>
+                    
+                    <div class="mt-4 text-left w-full max-w-xs space-y-2">
+                        <p class="text-gray-700"><span class="font-bold">生日:</span> 2005.5.31</p>
+                        <p class="text-gray-700"><span class="font-bold">星座:</span> 雙子座</p>
+                        <p class="text-gray-700"><span class="font-bold">MBTI:</span> ISTJ </p>
+                    </div>
+                </div>
+
+                <!-- 詳細介紹 -->
+                <div class="lg:w-2/3">
+                    <h4 class="text-3xl font-bold text-tws-blue mb-4 border-b pb-2">42是TWS存在的理由</h4>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Youngjae本名崔英宰，金海人，國三開始當練習生，金海首爾往返練習，在隊內年紀排行第三 
+                    </p>
+
+                    <h4 class="text-2xl font-bold text-tws-dark mb-3">關於他</h4>
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-gray-700">
+                        <li>在韓振剛來韓國時，一邊吃炸豬排一邊用翻譯器和韓振交流</li>
+                        <li>最喜歡的水果是西瓜</li>
+                        <li>在迷三活動期間開設的247shared帳號中，發了很多自己剪輯的影片</li>
+                        <li>出道前，因為太過焦慮，所以和申惟一起睡過一段時間</li>
+                        <li>看起來是個冷冷的人，實際上很溫柔</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. 成員 HANJIN 詳細檔案 (Detail Section) -->
+        <section id="member-hanjin-detail" class="hidden">
+            <button onclick="showSection('members')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                回到成員檔案
+            </button>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-tws-yellow flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-12">
+                <!-- 圖片輪播 & 基本資訊 -->
+                <div class="lg:w-1/3 flex flex-col items-center">
+                    <!-- Photo Carousel Container -->
+                    <div class="relative w-64 h-64 mb-6">
+                        <!-- Image (Initial State is managed by showSection calling changePhoto('hanjin', 0)) -->
+                        <img id="photo-hanjin" 
+                             src="https://placehold.co/300x300/facc15/1e3a8a?text=HANJIN+(1)" 
+                             alt="成員 HANJIN 形象照 1" 
+                             class="w-full h-full rounded-xl object-cover border-4 border-tws-blue shadow-lg transition duration-300">
+                        
+                        <!-- Previous Button -->
+                        <button onclick="changePhoto('hanjin', -1)" 
+                                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Left Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button onclick="changePhoto('hanjin', 1)" 
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Right Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+
+                    <h3 class="text-4xl font-extrabold text-tws-dark mb-2">HANJIN (韓振)</h3>
+                    
+                    <div class="mt-4 text-left w-full max-w-xs space-y-2">
+                        <p class="text-gray-700"><span class="font-bold">生日:</span> 2006.1.5</p>
+                        <p class="text-gray-700"><span class="font-bold">星座:</span> 摩羯座 </p>
+                        <p class="text-gray-700"><span class="font-bold">MBTI:</span> INFJ </p>
+                    </div>
+                </div>
+
+                <!-- 詳細介紹 -->
+                <div class="lg:w-2/3">
+                    <h4 class="text-3xl font-bold text-tws-blue mb-4 border-b pb-2">哪怕我速度很慢，過程很困難我也不會放棄</h4>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Hanjin本名韓振，中國河南人，是第五個進入公司的TWS成員，練習僅一年便加入了出道組，隊內年紀排行第四
+
+                    <h4 class="text-2xl font-bold text-tws-dark mb-3">關於他</h4>
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-gray-700">
+                        <li>剛來韓國時，不清楚冰淇淋的價格跟種類，直接挑了最貴的分享給其他練習生，當時道勳以為他是有錢人</li>
+                        <li>被同期練習生評價是非常善良的人</li>
+                        <li>麻辣香鍋愛好者</li>
+                        <li>床上擠滿了很多娃娃，曾說過自己會對這些娃娃們說心事</li>
+                        <li>很喜歡拍照記錄生活，成員們生日時也都有剪過影片送給他們</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. 成員 JIHOON 詳細檔案 (Detail Section) -->
+        <section id="member-jihoon-detail" class="hidden">
+            <button onclick="showSection('members')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                回到成員檔案
+            </button>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-tws-yellow flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-12">
+                <!-- 圖片輪播 & 基本資訊 -->
+                <div class="lg:w-1/3 flex flex-col items-center">
+                    <!-- Photo Carousel Container -->
+                    <div class="relative w-64 h-64 mb-6">
+                        <!-- Image (Initial State is managed by showSection calling changePhoto('jihoon', 0)) -->
+                        <img id="photo-jihoon" 
+                             src="https://placehold.co/300x300/60a5fa/1e3a8a?text=JIHOON+(1)" 
+                             alt="成員 JIHOON 形象照 1" 
+                             class="w-full h-full rounded-xl object-cover border-4 border-tws-blue shadow-lg transition duration-300">
+                        
+                        <!-- Previous Button -->
+                        <button onclick="changePhoto('jihoon', -1)" 
+                                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Left Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button onclick="changePhoto('jihoon', 1)" 
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Right Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+
+                    <h3 class="text-4xl font-extrabold text-tws-dark mb-2">JIHOON (志薫)</h3>
+                    
+                    <div class="mt-4 text-left w-full max-w-xs space-y-2">
+                        <p class="text-gray-700"><span class="font-bold">生日:</span> 2006.3.28</p>
+                        <p class="text-gray-700"><span class="font-bold">星座:</span> 白羊座</p>
+                        <p class="text-gray-700"><span class="font-bold">MBTI:</span> INFJ </p>
+                    </div>
+                </div>
+
+                <!-- 詳細介紹 -->
+                <div class="lg:w-2/3">
+                    <h4 class="text-3xl font-bold text-tws-blue mb-4 border-b pb-2">落後也沒關係，每個人都有屬於自己的方法和步調</h4>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Jihoon本名韓智薫，是TWS最後一名加入的成員，在很多經紀公司待過，隊內年紀排行第五
+
+                    <h4 class="text-2xl font-bold text-tws-dark mb-3">關於他</h4>
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-gray-700">
+                        <li>說自己是水母，平常隨波逐流，但遇到機會時會緊緊抓住不放手</li>
+                        <li>涉獵很各種舞種，開心的時候會跳tutting</li>
+                        <li>不太喜歡戴飾品，覺得會跳舞時會很不方便，但團鐲對他來說代表著很大的意義，所以即使是跳舞也不會將他拿下</li>
+                        <li>原本沒打算加入TWS的，只是接到BFF的編舞任務，後來被成員間的互動吸引決定加入</li>
+                        <li>如果不做偶像的話，打算出國學習舞蹈</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. 成員 KYUNGMIN 詳細檔案 (Detail Section) -->
+        <section id="member-kyungmin-detail" class="hidden">
+            <button onclick="showSection('members')" class="mb-6 inline-flex items-center text-tws-dark font-semibold hover:text-tws-blue transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m15 18-6-6 6-6"/></svg>
+                回到成員檔案
+            </button>
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border-t-8 border-tws-yellow flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-12">
+                <!-- 圖片輪播 & 基本資訊 -->
+                <div class="lg:w-1/3 flex flex-col items-center">
+                    <!-- Photo Carousel Container -->
+                    <div class="relative w-64 h-64 mb-6">
+                        <!-- Image (Initial State is managed by showSection calling changePhoto('kyungmin', 0)) -->
+                        <img id="photo-kyungmin" 
+                             src="https://placehold.co/300x300/bfdbfe/1e3a8a?text=KYUNGMIN+(1)" 
+                             alt="成員 KYUNGMIN 形象照 1" 
+                             class="w-full h-full rounded-xl object-cover border-4 border-tws-blue shadow-lg transition duration-300">
+                        
+                        <!-- Previous Button -->
+                        <button onclick="changePhoto('kyungmin', -1)" 
+                                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Left Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m15 18-6-6 6-6"/></svg>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button onclick="changePhoto('kyungmin', 1)" 
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow-lg transition duration-200">
+                            <!-- SVG Right Arrow -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tws-dark"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
+                    </div>
+
+                    <h3 class="text-4xl font-extrabold text-tws-dark mb-2">KYUNGMIN (炅潣)</h3>
+                    
+                    <div class="mt-4 text-left w-full max-w-xs space-y-2">
+                        <p class="text-gray-700"><span class="font-bold">生日:</span> 2007.10.2</p>
+                        <p class="text-gray-700"><span class="font-bold">星座:</span> 天秤座 </p>
+                        <p class="text-gray-700"><span class="font-bold">MBTI:</span> INTP</p>
+                    </div>
+                </div>
+
+                <!-- 詳細介紹 -->
+                <div class="lg:w-2/3">
+                    <h4 class="text-3xl font-bold text-tws-blue mb-4 border-b pb-2">決定自己該做甚麼的，這世界上只有一個人，那就是我自己</h4>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Kyungmin本名李炅潣，是團隊中的忙內，擁有獨特的聲線。雖然在TWS中年紀最小，但在家中是老大。
+                    </p>
+
+                    <h4 class="text-2xl font-bold text-tws-dark mb-3">關於他</h4>
+                    <ul class="list-disc list-outside ml-6 space-y-2 text-gray-700">
+                        <li>出道前的願望是和哥哥們一起出道</li>
+                        <li>擅長數學，曾經考過全校第六</li>
+                        <li>常常惹禍上身，讓哥哥們總是擔心著他</li>
+                        <li>炅潣的奶奶曾經問醫院人員知道TWS，並說裡面有個叫炅潣的孩子是我的孫子</li>
+                        <li>申惟說過炅潣是TWS的未來，是不可或缺的重要成員</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁腳 (Footer) -->
+    <footer class="bg-tws-dark text-white mt-10 p-6">
+        <div class="max-w-7xl mx-auto text-center text-sm opacity-80">
+            &copy; 2024 TWS Fan Project. All Rights Reserved. | 此網站用於推坑用
+        </div>
+    </footer>
+</body>
+</html>
